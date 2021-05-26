@@ -8,13 +8,14 @@ curl_setopt_array($curl, array(
   CURLOPT_USERPWD => $rpc_user . ":" . $rpc_password,
   CURLOPT_CUSTOMREQUEST => "POST",
   CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_POSTFIELDS => "{\n\"jsonrpc\": \"1.0\",\n\"id\":\"curltest\",\n\"method\": \"masternodelist\"\n}",
+  // CURLOPT_POSTFIELDS => "{\n\"jsonrpc\": \"1.0\",\n\"id\":\"curltest\",\n\"method\": \"masternodelist\"\n}",
+  CURLOPT_POSTFIELDS => "{\"jsonrpc\": \"1.0\", \"id\":\"curltest\", \"method\": \"masternodelist\", \"params\": [\"full\"] }",
 ));
 $listmasternodes = curl_exec($curl);
 $listmasternodes = json_decode($listmasternodes);
-echo "<pre>";
-print_r($listmasternodes);
-echo "</pre>";
+// echo "<pre>";
+// print_r($listmasternodes);
+// echo "</pre>";
 $mnlist = $listmasternodes->{'result'};
 curl_close($curl);
 
