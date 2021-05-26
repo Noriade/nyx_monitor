@@ -14,7 +14,7 @@ $listmasternodes = curl_exec($curl);
 $listmasternodes = json_decode($listmasternodes);
 echo "<pre>";
 print_r($listmasternodes);
-echo "</pre>"
+echo "</pre>";
 $mnlist = $listmasternodes->{'result'};
 curl_close($curl);
 
