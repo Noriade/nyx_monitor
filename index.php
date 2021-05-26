@@ -31,7 +31,7 @@ curl_setopt_array($curl, array(
 $getmasternodestatus = curl_exec($curl);
 $getmasternodestatus = json_decode($getmasternodestatus);
 $masternodestatus = $getmasternodestatus->{'result'};
-$mnaddress = $masternodestatus->{'payee'};
+$mnaddress = $masternodestatus->{'addr'};
 curl_close($curl);
 
 
