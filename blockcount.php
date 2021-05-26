@@ -18,7 +18,6 @@ curl_close($curl);
 $curl = curl_init();
 curl_setopt_array($curl, array(
   CURLOPT_URL => "http://explorer.nyxcoin.org/api/getblockcount"
-  CURLOPT_RETURNTRANSFER => true,
 ));
 $getreportedblock = curl_exec($curl);
 $getreportedblock = json_decode($getreportedblock);
