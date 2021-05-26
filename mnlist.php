@@ -178,7 +178,7 @@ echo     '</tr>';
 
     for ($i = 0; $i < count($mnlist); $i++) {
         echo "<tr>";
-        echo "<td>" . $mnlist[$i]->{'rank'} . "</td>";
+        echo "<td>" . $mnlist[$i]->{'0'} . "</td>";
         echo "<td>" . $mnlist[$i]->{'status'} . "</td>";
         echo "<td><a href=http://" . $xuez_explorer . "/address/" . $mnlist[$i]->{'addr'} .">" . $mnlist[$i]->{'addr'} . "</a></td>";
         echo "<td>" . date($date_format, $mnlist[$i]->{'lastseen'}) . "</td>";
