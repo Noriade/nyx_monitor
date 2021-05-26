@@ -30,9 +30,9 @@ curl_setopt_array($curl, array(
 ));
 $getmasternodestatus = curl_exec($curl);
 $getmasternodestatus = json_decode($getmasternodestatus);
-echo "<pre>"
+echo "<pre>";
 print_r($getmasternodestatus);
-echo "</pre>"
+echo "</pre>";
 $masternodestatus = $getmasternodestatus->{'result'};
 $mnaddress = $masternodestatus->{'addr'};
 curl_close($curl);
