@@ -26,12 +26,12 @@ curl_setopt_array($curl, array(
   CURLOPT_USERPWD => $rpc_user . ":" . $rpc_password,
   CURLOPT_CUSTOMREQUEST => "POST",
   CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_POSTFIELDS => "{\n\"jsonrpc\": \"1.0\",\n\"id\":\"curltest\",\n\"method\": \"getmasternodestatus\"\n}",
+  CURLOPT_POSTFIELDS => "{\n\"jsonrpc\": \"1.0\",\n\"id\":\"curltest\",\n\"method\": \"masternode status\"\n}",
 ));
 $getmasternodestatus = curl_exec($curl);
 $getmasternodestatus = json_decode($getmasternodestatus);
 $masternodestatus = $getmasternodestatus->{'result'};
-$mnaddress = $masternodestatus->{'addr'};
+$mnaddress = $masternodestatus->{'payee'};
 curl_close($curl);
 
 
@@ -43,7 +43,7 @@ curl_setopt_array($curl, array(
   CURLOPT_USERPWD => $rpc_user . ":" . $rpc_password,
   CURLOPT_CUSTOMREQUEST => "POST",
   CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_POSTFIELDS => "{\n\"jsonrpc\": \"1.0\",\n\"id\":\"curltest\",\n\"method\": \"listmasternodes\"\n}",
+  CURLOPT_POSTFIELDS => "{\n\"jsonrpc\": \"1.0\",\n\"id\":\"curltest\",\n\"method\": \"masternodelist\"\n}",
 ));
 $listmasternodes = curl_exec($curl);
 $listmasternodes = json_decode($listmasternodes);
