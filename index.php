@@ -52,7 +52,7 @@ curl_close($curl);
 
 
   for ($i = 0; $i < count($mnlist); $i++) {
-      if($mnlist[$i]->{'addr'} == $mnaddress)
+      if($mnlist[$i] == $mnaddress)
       {
         $mnstatus = $mnlist[$i]->{'status'};
         $mnnetwork = $mnlist[$i]->{'network'};
