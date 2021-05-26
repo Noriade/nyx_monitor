@@ -15,16 +15,15 @@ $getblockcount = json_decode($getblockcount);
 $getblockcount = $getblockcount->{'result'};
 curl_close($curl);
 
-$curl = curl_init();
-curl_setopt_array($curl, array(
+$reportedblock = curl_init();
+curl_setopt_array($reportedblock, array(
   CURLOPT_URL => "http://explorer.nyxcoin.org/api/getblockcount"
 ));
-$getreportedblock = curl_exec($curl);
+$getreportedblock = curl_exec($reportedblock);
 $getreportedblock = json_decode($getreportedblock);
 $getreportedblock = $getreportedblock->{'result'};
-curl_close($curl);
+curl_close($reportedblock);
 if(!empty($getblockcount)){
-
 if((int)$getblockcount < (int)$getreportedblock){
   echo '<div class="w3-container w3-border-bottom w3-border-white w3-orange w3-padding-16">';
 }
