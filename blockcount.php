@@ -17,12 +17,12 @@ curl_close($curl);
 
 if(!empty($getblockcount)){
 
-if((int)$getblockcount < (int)$getreportedblock){
-  echo '<div class="w3-container w3-border-bottom w3-border-white w3-orange w3-padding-16">';
-}
-elseif((int)$getblockcount >= (int)$getreportedblock){
-  echo '<div class="w3-container w3-border-bottom w3-border-white w3-green w3-padding-16">';
-}
+// if((int)$getblockcount < (int)$getreportedblock){
+//   echo '<div class="w3-container w3-border-bottom w3-border-white w3-orange w3-padding-16">';
+// }
+// elseif((int)$getblockcount >= (int)$getreportedblock){
+//   echo '<div class="w3-container w3-border-bottom w3-border-white w3-green w3-padding-16">';
+// }
 echo '<div class="w3-right">';
 echo "<h3>" . $getblockcount . "</h3>";
 echo '</div><div class="w3-clear"></div>';
