@@ -273,10 +273,11 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <footer class="w3-container w3-padding-16 w3-dark-grey">
     <h3 class="w3-bottombar w3-border-blue">Support XUEZ</h3>
     <p>Source code on <a href="https://github.com/dirtyak/xuez_monitor" target="_blank">GitHub</a></p>
-    <p>XUEZ Links :
-      <a href="http://xuez.donkeypool.com">Explorer</a> |
-      <a href="https://discordapp.com/invite/3Yypx4C">Discord</a> |
-      <a href="https://xuezcoin.com/">Website</a>
+    <p>NYX Links :
+      <a href="http://xuez.donkeypool.com" target="_blank">Explorer</a> |
+      <a href="https://discord.gg/AJhBZ7R" target="_blank">Discord</a> |
+      <a href="https://www.nyxcoin.org/" target="_blank">Website</a> |
+      <a href="https://join.slack.com/t/nyxcoin/shared_invite/enQtMzA1OTU5NjA1MTcyLTlhOTMxZTcxMTBhMTA5MWZhNjIxMTMxOGMwODVkN2ZiNWVlOTFhZWVkZDU2NDUzZjllOTdjYzU5YzFlM2U2MmY" target="_blank">Slack></a>
     </p>
   </footer>
 
