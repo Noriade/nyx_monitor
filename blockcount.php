@@ -22,7 +22,7 @@ curl_setopt_array($curl, array(
 $getreportedblock = curl_exec($curl);
 $getreportedblock = json_decode($getreportedblock);
 $getreportedblock = $getreportedblock->{'result'};
-
+curl_close($curl);
 if(!empty($getblockcount)){
 
 if((int)$getblockcount < (int)$getreportedblock){
