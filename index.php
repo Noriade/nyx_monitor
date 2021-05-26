@@ -43,7 +43,7 @@ curl_setopt_array($curl, array(
   CURLOPT_USERPWD => $rpc_user . ":" . $rpc_password,
   CURLOPT_CUSTOMREQUEST => "POST",
   CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_POSTFIELDS => "{\n\"jsonrpc\": \"1.0\",\n\"id\":\"curltest\",\n\"method\": \"masternodelist\"\n}",
+  CURLOPT_POSTFIELDS => "{\n\"jsonrpc\": \"1.0\",\n\"id\":\"curltest\",\n\"method\": \"getmasternodelist\"\n}",
 ));
 $listmasternodes = curl_exec($curl);
 $listmasternodes = json_decode($listmasternodes);
@@ -52,7 +52,7 @@ curl_close($curl);
 
 
   for ($i = 0; $i < count($mnlist); $i++) {
-      if($mnlist[$i] == $mnaddress)
+      if($mnlist[$i]->{'addr'} == $mnaddress)
       {
         $mnstatus = $mnlist[$i]->{'status'};
         $mnnetwork = $mnlist[$i]->{'network'};
