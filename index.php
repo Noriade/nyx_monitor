@@ -31,7 +31,6 @@ curl_setopt_array($curl, array(
 $getmasternodestatus = curl_exec($curl);
 $getmasternodestatus = json_decode($getmasternodestatus);
 echo "<pre>";
-print_r($curl);
 print_r($getmasternodestatus);
 echo "</pre>";
 $masternodestatus = $getmasternodestatus->{'result'};
