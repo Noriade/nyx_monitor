@@ -221,8 +221,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       if(!empty($mnaddress)){
         echo '<li class="w3-padding-16 w3-white">';
         echo '<span class="w3-xlarge">';
-        echo 'Masternode Address : <tr><a href=http://' . $xuez_explorer . '/address/' . $mnaddress . '>' . $mnaddress . '</a></tr>';
-        echo "<td><a href=http://" . $xuez_explorer . "/address/" . $mnlist[$i]->{'addr'} .">" . $mnlist[$i]->{'addr'} . "</a></td>";
+        echo 'Masternode Address : <tr><a href=http://' . $nyx_explorer . '/address/' . $mnaddress . '>' . $mnaddress . '</a></tr>';
+        echo "<td><a href=http://" . $nyx_explorer . "/address/" . $mnlist[$i]->{'addr'} .">" . $mnlist[$i]->{'addr'} . "</a></td>";
       }
       elseif(empty($mnaddress)){
         echo '<li class="w3-padding-16 w3-orange">';
