@@ -194,7 +194,7 @@ echo '</div>';
 ?>
 
   <!-- Footer -->
-include 'footer.php';
+<?php include 'footer.php';?>
 
   <script>
     function loadlink(){
