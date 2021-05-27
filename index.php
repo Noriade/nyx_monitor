@@ -97,6 +97,7 @@ $timenow = date($date_format, microtime(true));
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
+<script src="https://kit.fontawesome.com/d376d765e8.js" crossorigin="anonymous"></script>
 <body class="w3-light-grey">
 
 <!-- Top container -->
