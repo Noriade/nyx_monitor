@@ -47,4 +47,8 @@ nano /var/www/hmtl/config.php
 - You can see it running : http://139.180.136.33/
 
 # Feel free to Donate
-- NYX :
+- NYX : NfShqok1Zq9nncuqNXr5rhFcGhgcYQLCRk
+- Ethereum : 0x69a7a99f938Afaa0a6B9982D93eceB5C5ca9ACc2
+- Bitcoin : bc1qqfyhj66lp5pzzxm9vrgfmeppzf8h858ac7s4qe
+- Binance Smart Chain : 0x69a7a99f938Afaa0a6B9982D93eceB5C5ca9ACc2
+- Solana : CW53Yc3hE16Y21RHW8Vxa8bJMgtVvhxbUG9oFkmZKNxz
