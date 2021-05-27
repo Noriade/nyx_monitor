@@ -8,10 +8,13 @@ curl_setopt_array($curl, array(
   CURLOPT_USERPWD => $rpc_user . ":" . $rpc_password,
   CURLOPT_CUSTOMREQUEST => "POST",
   CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_POSTFIELDS => "{\n\"jsonrpc\": \"1.0\",\n\"id\":\"curltest\",\n\"method\": \"listmasternodes\"\n}",
+  CURLOPT_POSTFIELDS => "{\"jsonrpc\": \"1.0\", \"id\":\"curltest\", \"method\": \"masternodelist\", \"params\": [\"full\"] }",
 ));
 $listmasternodes = curl_exec($curl);
 $listmasternodes = json_decode($listmasternodes);
+echo "<pre>";
+print_r($listmasternodes);
+echo "</pre>";
 $mnlist = $listmasternodes->{'result'};
 curl_close($curl);
 
@@ -19,7 +22,7 @@ curl_close($curl);
 
 <!DOCTYPE html>
 <html>
-<title>XUEZ NODE MONITOR</title>
+<title>NYX NODE MONITOR</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -34,7 +37,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <!-- Top container -->
 <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
 
-  <span class="w3-bar-item w3-right"><b>xuez_monitor</b> | <?php print $version; ?></span>
+  <span class="w3-bar-item w3-right"><b>nyx_monitor</b> | <?php print $version; ?></span>
 </div>
 
 <!-- !PAGE CONTENT! -->
@@ -91,7 +94,7 @@ for ($i = 0; $i < count($mnlist); $i++) {
     echo   '</tr>';    echo "<tr>";
     echo "<td>" . $mnlist[$i]->{'rank'} . "</td>";
     echo "<td>" . $mnlist[$i]->{'status'} . "</td>";
-    echo "<td><a href=http://" . $xuez_explorer . "/address/" . $mnlist[$i]->{'addr'} .">" . $mnlist[$i]->{'addr'} . "</a></td>";
+    echo "<td><a href=http://" . $nyx_explorer . "/address/" . $mnlist[$i]->{'addr'} .">" . $mnlist[$i]->{'addr'} . "</a></td>";
     echo "<td>" . date($date_format, $mnlist[$i]->{'lastseen'}) . "</td>";
 
     if($mnlist[$i]->{'lastpaid'} == 0){echo "<td>Not yet</td>";}
@@ -128,7 +131,7 @@ echo '</tr>';
         echo "<tr>";
         echo "<td>" . $mnlist[$i]->{'rank'} . "</td>";
         echo "<td>" . $mnlist[$i]->{'status'} . "</td>";
-        echo "<td><a href=http://" . $xuez_explorer . "/address/" . $mnlist[$i]->{'addr'} .">" . $mnlist[$i]->{'addr'} . "</a></td>";
+        echo "<td><a href=http://" . $nyx_explorer . "/address/" . $mnlist[$i]->{'addr'} .">" . $mnlist[$i]->{'addr'} . "</a></td>";
         echo "<td>" . date($date_format, $mnlist[$i]->{'lastseen'}) . "</td>";
         if($mnlist[$i]->{'lastpaid'} == 0){
           echo "<td>Not yet</td>";
@@ -174,9 +177,9 @@ echo     '</tr>';
 
     for ($i = 0; $i < count($mnlist); $i++) {
         echo "<tr>";
-        echo "<td>" . $mnlist[$i]->{'rank'} . "</td>";
+        echo "<td>" . $mnlist[$i]->{'0'} . "</td>";
         echo "<td>" . $mnlist[$i]->{'status'} . "</td>";
-        echo "<td><a href=http://" . $xuez_explorer . "/address/" . $mnlist[$i]->{'addr'} .">" . $mnlist[$i]->{'addr'} . "</a></td>";
+        echo "<td><a href=http://" . $nyx_explorer . "/address/" . $mnlist[$i]->{'addr'} .">" . $mnlist[$i]->{'addr'} . "</a></td>";
         echo "<td>" . date($date_format, $mnlist[$i]->{'lastseen'}) . "</td>";
         if($mnlist[$i]->{'lastpaid'} == 0){echo "<td>Not yet</td>";}
         else{echo "<td>" . date($date_format, $mnlist[$i]->{'lastpaid'}) . "</td>";}
@@ -190,15 +193,7 @@ echo '</div>';
 ?>
 
   <!-- Footer -->
-  <footer class="w3-container w3-padding-16 w3-dark-grey">
-    <h5 class="w3-bottombar w3-border-blue">Support XUEZ</h5>
-    <p>Source code on <a href="https://github.com/dirtyak/xuez_monitor" target="_blank">GitHub</a></p>
-    <p>XUEZ Links :
-      <a href="http://xuez.donkeypool.com">Explorer</a> |
-      <a href="https://discordapp.com/invite/3Yypx4C">Discord</a> |
-      <a href="https://xuezcoin.com/">Website</a>
-    </p>
-  </footer>
+<?php include 'footer.php';?>
 
   <script>
     function loadlink(){
