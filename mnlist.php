@@ -23,7 +23,7 @@ curl_close($curl);
 
 <!DOCTYPE html>
 <html>
-<title>XUEZ NODE MONITOR</title>
+<title>NYX NODE MONITOR</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -38,7 +38,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <!-- Top container -->
 <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
 
-  <span class="w3-bar-item w3-right"><b>xuez_monitor</b> | <?php print $version; ?></span>
+  <span class="w3-bar-item w3-right"><b>nyx_monitor</b> | <?php print $version; ?></span>
 </div>
 
 <!-- !PAGE CONTENT! -->
