@@ -24,7 +24,6 @@ curl_setopt_array($curl, array(
   CURLOPT_USERPWD => $rpc_user . ":" . $rpc_password,
   CURLOPT_CUSTOMREQUEST => "POST",
   CURLOPT_RETURNTRANSFER => true,
-  #CURLOPT_POSTFIELDS => "{\n\"jsonrpc\": \"1.0\",\n\"id\":\"curltest\",\n\"method\": \"masternode\",\n\"params\": [\"getmasternodelist\"]\n}",
   CURLOPT_POSTFIELDS => "{\"jsonrpc\": \"1.0\", \"id\":\"curltest\", \"method\": \"masternode\", \"params\": [\"status\"] }",
 ));
 $getmasternodestatus = curl_exec($curl);
@@ -235,7 +234,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       echo '<span class="w3-xlarge">';
       echo 'Cannot connect to NYX node [url=' . $rpc_url . '] [port=' . $rpc_port . ']';
       echo '</br>';
-      echo '- Edit <b>rpc_user</b> and <b>rpc_password</b> in <b>config.php</b> (use the same credentials as xuez.conf)';
+      echo '- Edit <b>rpc_user</b> and <b>rpc_password</b> in <b>config.php</b> (use the same credentials as nyx.conf)';
       echo '</br>';
       echo '- Maybe your nyx daemon is not running';
     }
