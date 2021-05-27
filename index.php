@@ -17,8 +17,6 @@ $version = $networkinfo->{'subversion'};
 $ipv4 = $networkinfo->{'localaddresses'}[0]->{'address'};
 curl_close($curl);
 
-
-
 $curl = curl_init();
 curl_setopt_array($curl, array(
   CURLOPT_PORT => $rpc_port,
@@ -31,9 +29,6 @@ curl_setopt_array($curl, array(
 ));
 $getmasternodestatus = curl_exec($curl);
 $getmasternodestatus = json_decode($getmasternodestatus);
-// echo "<pre>";
-// print_r($getmasternodestatus);
-// echo "</pre>";
 $masternodestatus = $getmasternodestatus->{'result'};
 $mnaddress = $masternodestatus->{'payee'};
 curl_close($curl);
@@ -94,7 +89,7 @@ $timenow = date($date_format, microtime(true));
 
 <!DOCTYPE html>
 <html>
-<title>Masternodes MONITOR</title>
+<title>NYX MONITOR</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -108,7 +103,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <!-- Top container -->
 <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
 
-  <span class="w3-bar-item w3-right"><b>xuez_monitor</b> | <?php print $version;?></span>
+  <span class="w3-bar-item w3-right"><b>nyx_monitor</b> | <?php print $version;?></span>
 </div>
 
 <!-- !PAGE CONTENT! -->
@@ -232,17 +227,17 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       elseif(empty($mnaddress)){
         echo '<li class="w3-padding-16 w3-orange">';
         echo '<span class="w3-xlarge">';
-        echo 'XUEZ Daemon is running but is not a Masternode';
+        echo 'NYX Daemon is running but is not a Masternode';
       }
     }
     else{
       echo '<li class="w3-padding-16 w3-orange">';
       echo '<span class="w3-xlarge">';
-      echo 'Cannot connect to XUEZ node [url=' . $rpc_url . '] [port=' . $rpc_port . ']';
+      echo 'Cannot connect to NYX node [url=' . $rpc_url . '] [port=' . $rpc_port . ']';
       echo '</br>';
       echo '- Edit <b>rpc_user</b> and <b>rpc_password</b> in <b>config.php</b> (use the same credentials as xuez.conf)';
       echo '</br>';
-      echo '- Maybe your xuez daemon is not running';
+      echo '- Maybe your nyx daemon is not running';
     }
     echo '</li>';
     echo '</ul>';
