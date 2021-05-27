@@ -194,15 +194,7 @@ echo '</div>';
 ?>
 
   <!-- Footer -->
-  <footer class="w3-container w3-padding-16 w3-dark-grey">
-    <h5 class="w3-bottombar w3-border-blue">Support XUEZ</h5>
-    <p>Source code on <a href="https://github.com/dirtyak/xuez_monitor" target="_blank">GitHub</a></p>
-    <p>XUEZ Links :
-      <a href="http://xuez.donkeypool.com">Explorer</a> |
-      <a href="https://discordapp.com/invite/3Yypx4C">Discord</a> |
-      <a href="https://xuezcoin.com/">Website</a>
-    </p>
-  </footer>
+include 'footer.php';
 
   <script>
     function loadlink(){
