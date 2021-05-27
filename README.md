@@ -44,7 +44,7 @@ nano /var/www/hmtl/config.php
 - NYX-monitor now uses curl to make RPC request, it can be done locally or remotely and is much safer than older method (php shell_exec)
 
 # Example
-- You can see it running : 
+- You can see it running : http://139.180.136.33/
 
 # Feel free to Donate
-- NYX : 
+- NYX :
