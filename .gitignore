@@ -3,3 +3,4 @@ nyx_monitor_dev/
 monitor/
 monitor-dev/
 *.old
+config.php

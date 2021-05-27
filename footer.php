@@ -1,5 +1,5 @@
   <footer class="w3-container w3-padding-16 w3-dark-grey">
-    <h3 class="w3-bottombar w3-border-blue">NYX Node Monitor</h3>
+    <img src="img/nyx.png"><h3 class="w3-bottombar w3-border-blue">NYX Node Monitor</h3>
     <p>Source code on <a href="https://github.com/Noriade/nyx_monitor" target="_blank">GitHub</a> supported by <a href="https://noriade.com" target="_blank">Noriade</a></p>
     <p>NYX Links :
       <a href="http://explorer.nyxcoin.org/" target="_blank"><i class="fas fa-search fa-2x"></i></a> |
