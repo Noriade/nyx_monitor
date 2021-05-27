@@ -8,7 +8,6 @@ curl_setopt_array($curl, array(
   CURLOPT_USERPWD => $rpc_user . ":" . $rpc_password,
   CURLOPT_CUSTOMREQUEST => "POST",
   CURLOPT_RETURNTRANSFER => true,
-  // CURLOPT_POSTFIELDS => "{\n\"jsonrpc\": \"1.0\",\n\"id\":\"curltest\",\n\"method\": \"masternodelist\"\n}",
   CURLOPT_POSTFIELDS => "{\"jsonrpc\": \"1.0\", \"id\":\"curltest\", \"method\": \"masternodelist\", \"params\": [\"full\"] }",
 ));
 $listmasternodes = curl_exec($curl);
@@ -95,7 +94,7 @@ for ($i = 0; $i < count($mnlist); $i++) {
     echo   '</tr>';    echo "<tr>";
     echo "<td>" . $mnlist[$i]->{'rank'} . "</td>";
     echo "<td>" . $mnlist[$i]->{'status'} . "</td>";
-    echo "<td><a href=http://" . $xuez_explorer . "/address/" . $mnlist[$i]->{'addr'} .">" . $mnlist[$i]->{'addr'} . "</a></td>";
+    echo "<td><a href=http://" . $nyx_explorer . "/address/" . $mnlist[$i]->{'addr'} .">" . $mnlist[$i]->{'addr'} . "</a></td>";
     echo "<td>" . date($date_format, $mnlist[$i]->{'lastseen'}) . "</td>";
 
     if($mnlist[$i]->{'lastpaid'} == 0){echo "<td>Not yet</td>";}
@@ -132,7 +131,7 @@ echo '</tr>';
         echo "<tr>";
         echo "<td>" . $mnlist[$i]->{'rank'} . "</td>";
         echo "<td>" . $mnlist[$i]->{'status'} . "</td>";
-        echo "<td><a href=http://" . $xuez_explorer . "/address/" . $mnlist[$i]->{'addr'} .">" . $mnlist[$i]->{'addr'} . "</a></td>";
+        echo "<td><a href=http://" . $nyx_explorer . "/address/" . $mnlist[$i]->{'addr'} .">" . $mnlist[$i]->{'addr'} . "</a></td>";
         echo "<td>" . date($date_format, $mnlist[$i]->{'lastseen'}) . "</td>";
         if($mnlist[$i]->{'lastpaid'} == 0){
           echo "<td>Not yet</td>";
@@ -180,7 +179,7 @@ echo     '</tr>';
         echo "<tr>";
         echo "<td>" . $mnlist[$i]->{'0'} . "</td>";
         echo "<td>" . $mnlist[$i]->{'status'} . "</td>";
-        echo "<td><a href=http://" . $xuez_explorer . "/address/" . $mnlist[$i]->{'addr'} .">" . $mnlist[$i]->{'addr'} . "</a></td>";
+        echo "<td><a href=http://" . $nyx_explorer . "/address/" . $mnlist[$i]->{'addr'} .">" . $mnlist[$i]->{'addr'} . "</a></td>";
         echo "<td>" . date($date_format, $mnlist[$i]->{'lastseen'}) . "</td>";
         if($mnlist[$i]->{'lastpaid'} == 0){echo "<td>Not yet</td>";}
         else{echo "<td>" . date($date_format, $mnlist[$i]->{'lastpaid'}) . "</td>";}
