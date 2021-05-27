@@ -1,11 +1,11 @@
-# xuez-monitor
+# nyx-monitor
 
-PHP script designed to monitor your master-node(s) by using RPC API of XUEZ daemon.
+PHP script designed to monitor your master-node(s) by using RPC API of NYX daemon.
 It uses apache, php and curl.
 
 # Requirements
 
-- Have a XUEZ node running
+- Have a NYX node running
 - Install dependencies (as root):
 <pre>
 apt-get install apache2 libapache2-mod-php php php-curl unzip
@@ -21,7 +21,7 @@ ufw allow 80/tcp
 - Unzip files in <b>/var/www/html/</b> (default apache2 path) :
 <pre>
 cd /var/www/html/ # Default apache2 server path
-wget https://github.com/dirtyak/xuez_monitor/archive/master.zip
+wget https://github.com/nrenault/nyx_monitor/archive/master.zip
 unzip master.zip
 rm master.zip # We don't need that anymore
 </pre>
@@ -40,10 +40,10 @@ nano /var/www/hmtl/config.php
 
 # Important
 - Edit config.php (rpc_user & rpc_password)
-- Xuez-monitor now uses curl to make RPC request, it can be done locally or remotely and is much safer than older method (php shell_exec)
+- NYX-monitor now uses curl to make RPC request, it can be done locally or remotely and is much safer than older method (php shell_exec)
 
 # Example
-- You can see it running : http://45.77.53.110/
+- You can see it running : 
 
 # Feel free to Donate
-- XUEZ : XFZVA98C3t38KSob6AUnxqzNp86TjbqVtw
+- NYX : 
