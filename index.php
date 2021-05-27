@@ -17,8 +17,6 @@ $version = $networkinfo->{'subversion'};
 $ipv4 = $networkinfo->{'localaddresses'}[0]->{'address'};
 curl_close($curl);
 
-
-
 $curl = curl_init();
 curl_setopt_array($curl, array(
   CURLOPT_PORT => $rpc_port,
@@ -26,12 +24,12 @@ curl_setopt_array($curl, array(
   CURLOPT_USERPWD => $rpc_user . ":" . $rpc_password,
   CURLOPT_CUSTOMREQUEST => "POST",
   CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_POSTFIELDS => "{\n\"jsonrpc\": \"1.0\",\n\"id\":\"curltest\",\n\"method\": \"getmasternodestatus\"\n}",
+  CURLOPT_POSTFIELDS => "{\"jsonrpc\": \"1.0\", \"id\":\"curltest\", \"method\": \"masternode\", \"params\": [\"status\"] }",
 ));
 $getmasternodestatus = curl_exec($curl);
 $getmasternodestatus = json_decode($getmasternodestatus);
 $masternodestatus = $getmasternodestatus->{'result'};
-$mnaddress = $masternodestatus->{'addr'};
+$mnaddress = $masternodestatus->{'payee'};
 curl_close($curl);
 
 
@@ -43,7 +41,7 @@ curl_setopt_array($curl, array(
   CURLOPT_USERPWD => $rpc_user . ":" . $rpc_password,
   CURLOPT_CUSTOMREQUEST => "POST",
   CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_POSTFIELDS => "{\n\"jsonrpc\": \"1.0\",\n\"id\":\"curltest\",\n\"method\": \"listmasternodes\"\n}",
+  CURLOPT_POSTFIELDS => "{\n\"jsonrpc\": \"1.0\",\n\"id\":\"curltest\",\n\"method\": \"getmasternodelist\"\n}",
 ));
 $listmasternodes = curl_exec($curl);
 $listmasternodes = json_decode($listmasternodes);
@@ -90,7 +88,7 @@ $timenow = date($date_format, microtime(true));
 
 <!DOCTYPE html>
 <html>
-<title>XUEZ NODE MONITOR</title>
+<title>NYX MONITOR</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -99,12 +97,13 @@ $timenow = date($date_format, microtime(true));
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
+<script src="https://kit.fontawesome.com/d376d765e8.js" crossorigin="anonymous"></script>
 <body class="w3-light-grey">
 
 <!-- Top container -->
 <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
 
-  <span class="w3-bar-item w3-right"><b>xuez_monitor</b> | <?php print $version;?></span>
+  <span class="w3-bar-item w3-right"><b>nyx_monitor</b> | <?php print $version;?></span>
 </div>
 
 <!-- !PAGE CONTENT! -->
@@ -222,23 +221,23 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       if(!empty($mnaddress)){
         echo '<li class="w3-padding-16 w3-white">';
         echo '<span class="w3-xlarge">';
-        echo 'Masternode Address : <tr><a href=http://' . $xuez_explorer . '/address/' . $mnaddress . '>' . $mnaddress . '</a></tr>';
-        echo "<td><a href=http://" . $xuez_explorer . "/address/" . $mnlist[$i]->{'addr'} .">" . $mnlist[$i]->{'addr'} . "</a></td>";
+        echo 'Masternode Address : <tr><a href=http://' . $nyx_explorer . '/address/' . $mnaddress . '>' . $mnaddress . '</a></tr>';
+        echo "<td><a href=http://" . $nyx_explorer . "/address/" . $mnlist[$i]->{'addr'} .">" . $mnlist[$i]->{'addr'} . "</a></td>";
       }
       elseif(empty($mnaddress)){
         echo '<li class="w3-padding-16 w3-orange">';
         echo '<span class="w3-xlarge">';
-        echo 'XUEZ Daemon is running but is not a Masternode';
+        echo 'NYX Daemon is running but is not a Masternode';
       }
     }
     else{
       echo '<li class="w3-padding-16 w3-orange">';
       echo '<span class="w3-xlarge">';
-      echo 'Cannot connect to XUEZ node [url=' . $rpc_url . '] [port=' . $rpc_port . ']';
+      echo 'Cannot connect to NYX node [url=' . $rpc_url . '] [port=' . $rpc_port . ']';
       echo '</br>';
-      echo '- Edit <b>rpc_user</b> and <b>rpc_password</b> in <b>config.php</b> (use the same credentials as xuez.conf)';
+      echo '- Edit <b>rpc_user</b> and <b>rpc_password</b> in <b>config.php</b> (use the same credentials as nyx.conf)';
       echo '</br>';
-      echo '- Maybe your xuez daemon is not running';
+      echo '- Maybe your nyx daemon is not running';
     }
     echo '</li>';
     echo '</ul>';
@@ -266,15 +265,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 
   <!-- Footer -->
-  <footer class="w3-container w3-padding-16 w3-dark-grey">
-    <h3 class="w3-bottombar w3-border-blue">Support XUEZ</h3>
-    <p>Source code on <a href="https://github.com/dirtyak/xuez_monitor" target="_blank">GitHub</a></p>
-    <p>XUEZ Links :
-      <a href="http://xuez.donkeypool.com">Explorer</a> |
-      <a href="https://discordapp.com/invite/3Yypx4C">Discord</a> |
-      <a href="https://xuezcoin.com/">Website</a>
-    </p>
-  </footer>
+<?php include 'footer.php';?>
 
   <script>
     function loadlink(){
