@@ -25,8 +25,9 @@ wget https://github.com/nrenault/nyx_monitor/archive/master.zip
 unzip master.zip
 rm master.zip # We don't need that anymore
 </pre>
-- Edit configuration (<b>rpc_user</b> and <b>rpc_password</b>)
+- Create and edit configuration (<b>rpc_user</b> and <b>rpc_password</b>)
 <pre>
+cp /var/www/hmtl/config.php.example /var/www/hmtl/config.php
 nano /var/www/hmtl/config.php
 </pre>
 
